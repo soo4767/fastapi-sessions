@@ -21,7 +21,7 @@ class InMemoryBackend(Generic[ID, SessionModel], SessionBackend[ID, SessionModel
         if self.data.get(session_id):
             raise BackendError("create can't overwrite an existing session")
 
-        self.data[session_id] = data.copy(deep=True)
+        self.data[session_id] = data
 
     async def read(self, session_id: ID):
         """Read an existing session data."""
@@ -29,7 +29,7 @@ class InMemoryBackend(Generic[ID, SessionModel], SessionBackend[ID, SessionModel
         if not data:
             return
 
-        return data.copy(deep=True)
+        return data
 
     async def update(self, session_id: ID, data: SessionModel) -> None:
         """Update an existing session."""
