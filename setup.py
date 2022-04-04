@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name="fastapi_sessions",
-    packages=["fastapi_sessions","backends","frontends","implementations"],
+    packages=["fastapi_sessions","fastapi_sessions.backends","fastapi_sessions.frontends","fastapi_sessions.backends.implementations","fastapi_sessions.frontends.implementations"],
     version="0.1",
     license="MIT",
     description="Ready-to-use session cookies with custom backends for FastAPI",
